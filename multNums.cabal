@@ -1,0 +1,68 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 624c9e3cc0c1b8ae3dee3914ed13a3f51d45b67d8343b581999ca817e6cb0c4f
+
+name:           multNums
+version:        0.1.0.0
+description:    A Practice Boi
+homepage:       https://github.com/BRobersonO
+bug-reports:    https://github.com/BRobersonO/multNums/issues
+author:         BRobersonO
+maintainer:     BRobersonO@gmail.com
+copyright:      2020 BRobersonO
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/BRobersonO/multNums
+
+library
+  exposed-modules:
+      MultNums
+    --, QuickCheck
+  other-modules:
+      Paths_multNums
+  hs-source-dirs:
+      src
+  build-depends:
+      --multNums
+      base >=4.7 && <5
+    --, libiserv
+    --, QuickCheck
+  default-language: Haskell2010
+
+executable multNums-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_multNums
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , multNums
+    , QuickCheck
+  default-language: Haskell2010
+
+test-suite multNums-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_multNums
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , multNums
+    , QuickCheck
+  default-language: Haskell2010
